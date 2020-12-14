@@ -13,6 +13,8 @@
  * It returns the string `foofoo`
 */
 
+//Just prep for today
+
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
