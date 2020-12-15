@@ -164,19 +164,19 @@ function scoreboard(getInningScore, inning, number/* CODE HERE */) {
     homeScore = inning() + homeScore;
     awayScore = inning() + awayScore;
     eachTeamScore.push(`Inning ${i+1}: away ${awayScore} - Home ${homeScore}`);
-    if (homeScore!=awayScore){
-      console.log(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+    /*if (homeScore!=awayScore){
+      eachTeamScore.push(`Final Score: Away ${awayScore} - Home ${homeScore}`)
     }
     else{
-      console.log(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
-    }
+      eachTeamScore.push(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
+    }*/
   }
-  /*if (homeScore!=awayScore){
-    console.log(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+  if (homeScore!=awayScore){
+    eachTeamScore.push(`Final Score: Away ${awayScore} - Home ${homeScore}`)
   }
   else{
-    console.log(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
-  }*/
+    eachTeamScore.push(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
+  }
   return eachTeamScore;
 }
 console.log(scoreboard(getInningScore, inning, 9));
