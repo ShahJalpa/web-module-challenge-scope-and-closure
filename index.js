@@ -155,10 +155,31 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
-function scoreboard(/* CODE HERE */) {
+function scoreboard(getInningScore, inning, number/* CODE HERE */) {
   /* CODE HERE */
+  let eachTeamScore = [];
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i=0; i<number; i++){
+    homeScore = inning() + homeScore;
+    awayScore = inning() + awayScore;
+    eachTeamScore.push(`Inning ${i+1}: away ${awayScore} - Home ${homeScore}`);
+    if (homeScore!=awayScore){
+      console.log(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+    }
+    else{
+      console.log(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
+    }
+  }
+  /*if (homeScore!=awayScore){
+    console.log(`Final Score: Away ${awayScore} - Home ${homeScore}`)
+  }
+  else{
+    console.log(`This game will require extar innings: Away ${awayScore} - ${homeScore}`);
+  }*/
+  return eachTeamScore;
 }
-
+console.log(scoreboard(getInningScore, inning, 9));
 
 
 
@@ -169,8 +190,7 @@ function foo(){
 }
 export default{
   foo,
-  processFirstItem,
-  counter1,
+  processFirstItem,  counter1,
   counter2,
   inning,
   finalScore,
